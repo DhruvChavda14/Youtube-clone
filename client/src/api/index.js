@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // const API = axios.create({ baseURL: `http://localhost:5500/` });
-const API = axios.create({ baseURL: `https://youtubeclone1403.netlify.app/` });
+const API = axios.create({ baseURL: `https://youtube-clone1403.netlify.app/` });
 //const API = axios.create({ baseURL: `https://youtubeclone5031.herokuapp.com/` });
 
 API.interceptors.request.use((req) => {
