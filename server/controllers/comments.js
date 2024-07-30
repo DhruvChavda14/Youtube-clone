@@ -1,7 +1,7 @@
 import comment from "../models/comments.js";
 import mongoose from "mongoose";
 
-//   ;
+
 
 export const postComment = async (req, res) => {
   const commentData = req.body;

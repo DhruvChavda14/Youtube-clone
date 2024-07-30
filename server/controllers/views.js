@@ -1,6 +1,7 @@
 import videoFiles from "../models/videoFiles.js";
 import mongoose from "mongoose";
 
+
 export const viewController = async (req, res) => {
   const { id: _id } = req.params;
   // console.log(_id)
@@ -13,6 +14,7 @@ export const viewController = async (req, res) => {
     const updateview = await videoFiles.findByIdAndUpdate(_id, {
       $set: { Views: views + 1 },
     });
+    
     res.status(200).json(updateview);
   } catch (error) {
     res.status(400).json("error : ", error);

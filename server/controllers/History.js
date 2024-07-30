@@ -32,7 +32,7 @@ export const deleteHistoryController = async (req, res) => {
     await History.deleteMany({
         Viewer:userId
     });
-    res.status(200).json({ message: "Removed  from your watch Laters" });
+    res.status(200).json({ message: "Removed  from your watch history" });
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
