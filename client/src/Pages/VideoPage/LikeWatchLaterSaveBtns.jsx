@@ -29,10 +29,9 @@ function LikeWatchLaterSaveBtns({ vv, vid }) {
   const [DislikeBtn, setDislikeBtn] = useState(false);
   const [LikeBtn, setLikeBtn] = useState(false);
 
-  const likedVideoList = useSelector((state) => state.likedVideoReducer);
-  
-  const watchLaterList= useSelector(state=>state.watchLaterReducer)
-
+  const likedVideoList = useSelector((state) => state.likedVideoReducer) || { data: [] };
+  const watchLaterList = useSelector((state) => state.watchLaterReducer) || { data: [] };
+  // console.log(CurrentUser?.result._id)
   useEffect(() => {
     likedVideoList?.data
       .filter(
@@ -44,7 +43,7 @@ function LikeWatchLaterSaveBtns({ vv, vid }) {
         (q) => q?.videoId === vid && q?.Viewer === CurrentUser?.result._id
       )
       .map((m) => setSAveVideo(true));
-  }, []);
+  }, [CurrentUser?.result._id, likedVideoList?.data, vid, watchLaterList?.data]);
 
   const toggleSavedVideo = () => {
     if (CurrentUser) {
@@ -66,7 +65,7 @@ function LikeWatchLaterSaveBtns({ vv, vid }) {
         );
       }
     } else {
-      alert("Plz Login To save the video !");
+      alert("Please login to save the video!");
     }
   };
 
@@ -80,10 +79,12 @@ function LikeWatchLaterSaveBtns({ vv, vid }) {
             Like: lk - 1,
           })
         );
-        dispatch(deletelikedVideo({
-          videoId: vid,
-          Viewer: CurrentUser?.result._id,
-        }))
+        dispatch(
+          deletelikedVideo({
+            videoId: vid,
+            Viewer: CurrentUser?.result._id,
+          })
+        );
       } else {
         setLikeBtn(true);
         dispatch(
@@ -101,7 +102,7 @@ function LikeWatchLaterSaveBtns({ vv, vid }) {
         setDislikeBtn(false);
       }
     } else {
-      alert("Plz Login To give a like");
+      alert("Please login to give a like");
     }
   };
 
@@ -118,17 +119,20 @@ function LikeWatchLaterSaveBtns({ vv, vid }) {
               Like: lk - 1,
             })
           );
-          dispatch(deletelikedVideo({
-            videoId: vid,
-            Viewer: CurrentUser?.result._id,
-          }))
+          dispatch(
+            deletelikedVideo({
+              videoId: vid,
+              Viewer: CurrentUser?.result._id,
+            })
+          );
         }
         setLikeBtn(false);
       }
     } else {
-      alert("Plz Login To give a like");
+      alert("Please login to give a like");
     }
   };
+
   return (
     <div className="btns_cont_videoPage">
       <div className="btn_VideoPage">
@@ -136,10 +140,7 @@ function LikeWatchLaterSaveBtns({ vv, vid }) {
       </div>
 
       <div className="btn_VideoPage">
-        <div
-          className="like_videoPage"
-          onClick={(e) => toggleLikeBtn(e, vv.Like)}
-        >
+        <div className="like_videoPage" onClick={(e) => toggleLikeBtn(e, vv.Like)}>
           {LikeBtn ? (
             <>
               <AiFillLike size={22} className="btns_videoPage" />
@@ -151,10 +152,7 @@ function LikeWatchLaterSaveBtns({ vv, vid }) {
           )}
           <b>{vv.Like}</b>
         </div>
-        <div
-          className="like_videoPage"
-          onClick={(e) => toggleDislikeBtn(e, vv.Like)}
-        >
+        <div className="like_videoPage" onClick={(e) => toggleDislikeBtn(e, vv.Like)}>
           {DislikeBtn ? (
             <>
               <AiFillDislike size={22} className="btns_videoPage" />

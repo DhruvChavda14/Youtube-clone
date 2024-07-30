@@ -9,6 +9,8 @@ export const fetchAllChanel=()=>async(dispatch)=>{
         console.log(error)
     }
 }
+
+
 export const updateChanelDate=(id,updateData)=> async(dispatch)=>{
     try {
         const {data}= await api.updateChanelData(id,updateData);

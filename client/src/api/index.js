@@ -1,19 +1,19 @@
 import axios from "axios";
 
-//const API = axios.create({ baseURL: `http://localhost:5500/` });
-const API = axios.create({ baseURL: `https://youtubeclone1403.netlify.app/` });
+const API = axios.create({ baseURL: `http://localhost:5500/` });
+// const API = axios.create({ baseURL: `https://youtubeclone1403.netlify.app/` });
 //const API = axios.create({ baseURL: `https://youtubeclone5031.herokuapp.com/` });
 
 API.interceptors.request.use((req) => {
   if (localStorage.getItem("Profile")) {
-    req.headers.authorization = `Bearer ${
-      JSON.parse(localStorage.getItem("Profile")).token
-    }`;
+    req.headers.authorization = `Bearer ${JSON.parse(localStorage.getItem("Profile")).token
+      }`;
   }
   return req;
 });
 
 export const login = (authData) => API.post("/user/login", authData);
+export const fetchCurrentUser=() => API.get("/user/currentUser")
 export const updateChanelData = (id, updateData) =>
   API.patch(`/user/update/${id}`, updateData);
 export const fetchAllChanel = () => API.get("/user/getAllChanels");
@@ -42,7 +42,13 @@ export const getAllHistory = () => API.get("/video/getAllHistory");
 export const deleteHistory = (userId) =>
   API.delete(`/video/deleteHistory/${userId}`);
 
-  export const postComment=(CommentData)=>API.post('/comment/post',CommentData)
-  export const deleteComment=(id)=>API.delete(`/comment/delete/${id}`)
-  export const editComment=(id,commentBody)=>API.patch(`/comment/edit/${id}`,{commentBody})
-  export const getAllComment=()=>API.get('/comment/get')
+export const postComment = (CommentData) => API.post('/comment/post', CommentData)
+export const deleteComment = (id) => API.delete(`/comment/delete/${id}`)
+export const editComment = (id, commentBody) => API.patch(`/comment/edit/${id}`, { commentBody })
+export const getAllComment = () => API.get('/comment/get')
+
+
+export const watchVideo = (videoId, userId, pointsToAward) => API.post(`/video/watch/${videoId}/${userId}`);
+export const fetchUserPoints = (userId) => API.get(`/user/points/${userId}`);
+
+

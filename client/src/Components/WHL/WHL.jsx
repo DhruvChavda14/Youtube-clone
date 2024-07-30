@@ -7,11 +7,11 @@ import "./WHLcss.css";
 import WHLVideoList from "./WHLVideoList";
 function WHL({ page, videoList }) {
   const CurrentUser = useSelector((state) => state?.currentUserReducer);
-const dispatch=useDispatch()
-  const handleClearHistory=()=>{
-    if(CurrentUser){
+  const dispatch = useDispatch()
+  const handleClearHistory = () => {
+    if (CurrentUser) {
       dispatch(clearHistory({
-        userId:CurrentUser?.result._id
+        userId: CurrentUser?.result._id
       }))
     }
   }
@@ -23,16 +23,16 @@ const dispatch=useDispatch()
           <div className="box_WHL leftside_whl">
             <b>Your {page} Shown Here </b>
             {
-              page==="History"&&
-            <div className="clear_History_btn" onClick={()=>handleClearHistory()}>Clear History</div>
+              page === "History" &&
+              <div className="clear_History_btn" onClick={() => handleClearHistory()}>Clear History</div>
             }
           </div>
           <div className="rightSide_whl">
             <h1>{page}</h1>
             <div className="whl_list">
-              <WHLVideoList page={page} 
-              CurrentUser={CurrentUser?.result._id}
-              videoList={videoList} />
+              <WHLVideoList page={page}
+                CurrentUser={CurrentUser?.result._id}
+                videoList={videoList} />
             </div>
           </div>
         </p>

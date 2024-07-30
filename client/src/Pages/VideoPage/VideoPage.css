@@ -4,10 +4,12 @@
   background-color: rgb(11, 11, 11);
   color: white;
 }
+
 .container2_videoPage {
   margin: 1.5rem 4.5rem;
   display: flex;
 }
+
 .video_display_screen_videoPage {
   width: calc(100vw - 4.5rem - 35vw);
   padding: 1rem;
@@ -25,16 +27,19 @@
   border-bottom: 3px solid rgba(245, 222, 179, 0.175);
   flex-grow: 1;
 }
+
 .video_title_VideoPage {
   font-size: x-large;
   margin: 0;
   padding: 1rem 0.8rem;
 }
+
 .views_date_btns_VideoPage {
   display: flex;
   margin: 0.5rem 1rem;
   width: calc(100vw - 6.5rem - 35vw);
 }
+
 .views_videoPage {
   display: flex;
   font-size: 0.8rem;
@@ -49,6 +54,7 @@
   color: aliceblue;
   font-weight: bolder;
 }
+
 .chanel_logo_videoPage {
   display: flex;
   border: 1px solid rgba(0, 0, 0, 0.19);
@@ -64,16 +70,81 @@
   margin: auto;
   font-size: xx-large;
 }
+
 .chanel_name_videoPage {
   font-weight: bolder;
   margin: auto 1rem;
   font-size: larger;
 }
-.comments_VideoPage{
-    width: 100%;
-    padding-inline-start: 0.5rem;
+
+.comments_VideoPage {
+  width: 100%;
+  padding-inline-start: 0.5rem;
 }
-.moreVideoBar{
-    width: calc(100vw - 4.5rem - 70vw);
-    padding: 0 1rem;
+
+.moreVideoBar {
+  width: calc(100vw - 4.5rem - 70vw);
+  padding: 0 1rem;
+}
+
+
+.notification-container {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #00ee00;
+  border: 1px solid #ced4da;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  border-radius: 5px;
+  width: 300px;
+  z-index: 999;
+  opacity: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.notification-container p {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.notification-container .close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #888;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.notification-container .close-btn:hover {
+  color: #555;
+}
+
+.moreVideoInfo {
+  width: 80%;
+  color: aliceblue;
+  padding: 0.1rem;
+  margin: 0.1rem;
+  height: fit-content;
+}
+
+.moreVideoTitle {
+  margin: 0;
+  font-size: large;
+  font-weight: bolder;
+  color: antiquewhite;
+  display: flex;
+  text-align: clip;
+}
+
+.moreVideoViews {
+  font-size: medium;
+  color: rgba(250, 235, 215, 0.555);
+  margin: 0.2rem;
+  display: flex;
 }

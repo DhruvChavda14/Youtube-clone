@@ -8,8 +8,11 @@ import WatchLater from "../Pages/WatchLater/WatchLater";
 import LikedVideo from "../Pages/LikedVideo/LikedVideo";
 import VideoPage from "../Pages/VideoPage/VideoPage";
 import Chanel from "../Pages/Chanel/Chanel";
-import Search from "../Pages/Search/Search";
-function AllRoutes({ setEditCreateChanelBtn,setVidUploadPage }) {
+import Search from "../Pages/Search/Search"; 
+import LobbyScreen from "../Pages/Screens/lobby";
+import RoomPage from "../Pages/Screens/Room";
+
+function AllRoutes({ setEditCreateChanelBtn, setVidUploadPage }) {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
@@ -19,13 +22,16 @@ function AllRoutes({ setEditCreateChanelBtn,setVidUploadPage }) {
       <Route path="/likedvideo" element={<LikedVideo />} />
       <Route path="/yourvideos" element={<YourVideo />} />
       <Route path="/videopage/:vid" element={<VideoPage />} />
-      <Route path="/seacrh/:searchQuery" element={<Search />} />
+      <Route path="/lobby" element={<LobbyScreen />} />
+      <Route path="/room/:roomId" element={<RoomPage />} />
+      <Route path="/search/:searchQuery" element={<Search />} />
       <Route
         path="/chanel/:Cid"
-        element={<Chanel 
+        element={<Chanel
           setVidUploadPage={setVidUploadPage}
           setEditCreateChanelBtn={setEditCreateChanelBtn} />}
       />
+      
     </Routes>
   );
 }

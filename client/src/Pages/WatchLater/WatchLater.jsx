@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
-import vid from "../../Components/Video/vid.mp4";
-import WHL from '../../Components/WHL/WHL';
+
+import WHL from '../../Components/WHL/WHL.jsx';
 function WatchLater() {
 
   const watchLaterList= useSelector(state=>state.watchLaterReducer)

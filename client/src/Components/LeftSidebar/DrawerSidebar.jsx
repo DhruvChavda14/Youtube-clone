@@ -45,6 +45,7 @@ function DrawerSidebar({ toggleDrawer,toggleDrawerSidebar }) {
                 width={22}
                 className={"icon_sidebar"}
                 style={{ margin: "auto 0.7rem" }}
+                alt=""
               />
               <div className="text_sidebar_icon">Shorts</div>
             </p>

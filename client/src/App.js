@@ -1,7 +1,7 @@
 import "./App.css";
 import React, { useEffect } from "react";
 import Navbar from "./Components/Navbar/Navbar";
-import { BrowserRouter as Router } from "react-router-dom";
+import {  BrowserRouter as Router } from "react-router-dom";
 import { useState } from "react";
 import AllRoutes from "./Components/AllRoutes";
 import DrawerSidebar from "./Components/LeftSidebar/DrawerSidebar";
@@ -13,9 +13,11 @@ import { getAllVideo } from "./actions/video";
 import { getAlllikedVideo } from "./actions/likedVideo";
 import { getAllwatchLater } from "./actions/watchLater";
 import { getAllHistory } from "./actions/History";
+
+
 function App() {
   const dispatch = useDispatch();
-  
+
   useEffect(() => {
     dispatch(fetchAllChanel());
     dispatch(getAllVideo());
@@ -23,6 +25,8 @@ function App() {
     dispatch(getAllwatchLater());
     dispatch(getAllHistory());
   }, [dispatch]);
+
+
 
   const [toggleDrawerSidebar, setToggleDrawerSidebar] = useState({
     display: "none",
@@ -42,21 +46,21 @@ function App() {
   const [EditCreateChanelBtn, setEditCreateChanelBtn] = useState(false);
   return (
     <Router>
-      {vidUploadPage && <VideoUpload  setVidUploadPage={setVidUploadPage}/>}
-      {EditCreateChanelBtn && (
-        <CreateEditChanel setEditCreateChanelBtn={setEditCreateChanelBtn} />
-      )}
-      <Navbar
-        setEditCreateChanelBtn={setEditCreateChanelBtn}
-        toggleDrawer={toggleDrawer}
-      />
-
-      <DrawerSidebar
-        toggleDrawer={toggleDrawer}
-        toggleDrawerSidebar={toggleDrawerSidebar}
-      />
-
-      <AllRoutes setVidUploadPage={setVidUploadPage} setEditCreateChanelBtn={setEditCreateChanelBtn} />
+      
+        {vidUploadPage && <VideoUpload setVidUploadPage={setVidUploadPage} />}
+        {EditCreateChanelBtn && (
+          <CreateEditChanel setEditCreateChanelBtn={setEditCreateChanelBtn} />
+        )}
+        <Navbar
+          setEditCreateChanelBtn={setEditCreateChanelBtn}
+          toggleDrawer={toggleDrawer}
+        />
+        <DrawerSidebar
+          toggleDrawer={toggleDrawer}
+          toggleDrawerSidebar={toggleDrawerSidebar}
+        />
+       
+        <AllRoutes setVidUploadPage={setVidUploadPage} setEditCreateChanelBtn={setEditCreateChanelBtn} />
     </Router>
   );
 }

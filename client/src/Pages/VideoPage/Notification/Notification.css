@@ -1,0 +1,37 @@
+.notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #00ee00;
+    border: 1px solid #ced4da;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    border-radius: 5px;
+    width: 300px;
+    z-index: 999;
+    /* Ensure notification appears on top */
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.notification p {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.notification button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #888;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.notification button:hover {
+    color: #555;
+}

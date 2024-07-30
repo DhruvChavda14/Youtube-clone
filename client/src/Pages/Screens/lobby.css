@@ -1,0 +1,77 @@
+/* lobby.css */
+html,body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    
+    height: 100%;
+    
+}
+
+.lobby-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    padding: 40px;
+    min-height: 100vh;
+    background-color: #353535;
+    width: 100%;
+    text-align: center;
+}
+
+.lobby-container h1 {
+    margin-bottom: 30px;
+    color: #ffffff;
+    font-size: 35px;
+    font-weight: 600;
+    
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.lobby-label {
+    display: inline-flex;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    font-size: 26px;
+    margin-right: auto;
+    color: #fbf7f7;
+    text-align: left;
+}
+
+.lobby-input {
+    
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #fffdfd;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.lobby-input:focus {
+    border-color: #007bff;
+}
+
+.join-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 16px;
+    margin-top: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.join-button:hover {
+    background-color: #0056b3;
+}
