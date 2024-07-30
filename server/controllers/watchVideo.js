@@ -1,43 +1,6 @@
 import users from '../models/auth.js'
 import History from '../models/History.js';
 
-// export const watchVideo = async (req, res) => {
-//     const { userId, videoId } = req.params;
-
-//     try {
-//         const user = await users.findById(userId);
-//         if (!user) {
-//             return res.status(404).json({ message: 'User not found' });
-//         }
-
-//         const lastHistoryEntry = await History.findOne({ userId }).sort({ watchedAt: -1 });
-
-//         const now = new Date();
-//         const lastWatched = lastHistoryEntry ? lastHistoryEntry.watchedAt : null;
-
-//         const pointsToAdd = (now - lastWatched < 30000) ? 10 : 5; // 300000 ms = 5 minutes
-//         //console.log("Points to add : ", pointsToAdd)
-//         if(pointsToAdd===10) pointsToAdd/=2
-//         user.points += pointsToAdd;
-
-//         await user.save();
-
-//         const newHistoryEntry = new History({
-//             userId,
-//             videoId,
-//             watchedAt: now
-//         });
-
-//         await newHistoryEntry.save();
-
-//         res.status(200).json({ points: user.points });
-//     } catch (error) {
-//         res.status(500).json({ message: 'Server error', error });
-//     }
-// };
-
-
-
 export const watchVideo = async (req, res) => {
     const { userId, videoId } = req.params;
 

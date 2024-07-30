@@ -8,7 +8,7 @@ function ShowVideo({vid}) {
     <>
      <Link to={`/videopage/${vid?._id}`}>
         <video 
-          src={`https://youtube-clone1403.netlify.app/${vid.filePath}`}
+          src={`https://youtube-clone-7q2a.onrender.com${vid.filePath}`}
           // src={`http://localhost:5500/${vid.filePath}`}
         // src={`https://youtubeclone5031.herokuapp.com/${vid.filePath}`}
         className="video_ShowVideo"
