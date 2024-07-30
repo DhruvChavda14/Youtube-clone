@@ -145,7 +145,8 @@ function VideoPage() {
       const firstMoreVideo = moreVideos[0];
       console.log(firstMoreVideo);
       if (firstMoreVideo) {
-        videoRef.current.src = `https://youtube-clone-7q2a.onrender.com/${firstMoreVideo.filePath}`;
+        //videoRef.current.src = `https://youtube-clone-7q2a.onrender.com/${firstMoreVideo.filePath}`;
+        videoRef.current.src = `https://youtube-clone-1-jrfr.onrender.com/${firstMoreVideo.filePath}`;
         videoRef.current.play();
       }
     }
@@ -216,7 +217,8 @@ function VideoPage() {
         <div className="video_display_screen_videoPage">
           <video
             ref={videoRef}
-            src={`https://youtube-clone-7q2a.onrender.com/${vv?.filePath}`}
+            //src={`https://youtube-clone-7q2a.onrender.com/${vv?.filePath}`}
+            src={`https://youtube-clone-1-jrfr.onrender.com/${vv?.filePath}`}
             className="video_ShowVideo_videoPage"
             controls
             onMouseDown={(e) => {
@@ -283,7 +285,7 @@ function VideoPage() {
             moreVideos?.map((video) => (
               <div key={video._id} className="moreVideoItem">
                 <Link to={`/video/${video._id}`} className="moreVideoLink">
-                  <video src={`https://youtube-clone-7q2a.onrender.com/${video.filePath}`} className="moreVideoThumbnail" />
+                  <video src={`https://youtube-clone-1-jrfr.onrender.com/${video.filePath}`} className="moreVideoThumbnail" />
                 </Link>
                   <div className="moreVideoInfo">
                     <p className="moreVideoTitle">{video.videoTitle}</p>
