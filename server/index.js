@@ -23,10 +23,11 @@ app.use(bodyParser.json());
 
 
 
+const SOCKET_SERVER_URL = "https://youtube-clone-7q2a.onrender.com";
 
-
-const io = new Server(8000, {
+const io = new Server(SOCKET_SERVER_URL, {
     cors: true,
+    secure:true
 });
 
 const emailToSocketIdMap = new Map();
