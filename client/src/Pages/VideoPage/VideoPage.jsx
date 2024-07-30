@@ -145,7 +145,7 @@ function VideoPage() {
       const firstMoreVideo = moreVideos[0];
       console.log(firstMoreVideo);
       if (firstMoreVideo) {
-        videoRef.current.src = `http://localhost:5500/${firstMoreVideo.filePath}`;
+        videoRef.current.src = `https://youtubeclone1403.netlify.app/${firstMoreVideo.filePath}`;
         videoRef.current.play();
       }
     }
@@ -216,7 +216,7 @@ function VideoPage() {
         <div className="video_display_screen_videoPage">
           <video
             ref={videoRef}
-            src={`http://localhost:5500/${vv?.filePath}`}
+            src={`https://youtubeclone1403.netlify.app/${vv?.filePath}`}
             className="video_ShowVideo_videoPage"
             controls
             onMouseDown={(e) => {
@@ -283,7 +283,7 @@ function VideoPage() {
             moreVideos?.map((video) => (
               <div key={video._id} className="moreVideoItem">
                 <Link to={`/video/${video._id}`} className="moreVideoLink">
-                  <video src={`http://localhost:5500/${video.filePath}`} className="moreVideoThumbnail" />
+                  <video src={`https://youtubeclone1403.netlify.app/${video.filePath}`} className="moreVideoThumbnail" />
                 </Link>
                   <div className="moreVideoInfo">
                     <p className="moreVideoTitle">{video.videoTitle}</p>
