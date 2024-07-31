@@ -16,7 +16,8 @@ function DecribeChanel({ setEditCreateChanelBtn, Cid, setVidUploadPage }) {
   const currentUser = useSelector((state) => state?.currentUserReducer);
   const userPoints = useSelector((state) => state.pointsReducer.points);
   const loading = useSelector((state) => state.pointsReducer.loading);
-
+  const currentHour = new Date().getHours();
+  const isVideoCallAllowed = currentHour >= 18 && currentHour < 24;
   
   useEffect(() => {
     if (currentUser?.result?._id) {
@@ -58,10 +59,19 @@ function DecribeChanel({ setEditCreateChanelBtn, Cid, setVidUploadPage }) {
             <FaUpload />
             <b> Upload Video</b>
           </p>
-          <p className="videocallbtn_chanel" onClick={handleVideoCallClick}>
+          <p
+            className="videocallbtn_chanel"
+            onClick={isVideoCallAllowed ? handleVideoCallClick : null}
+            style={{
+              color: isVideoCallAllowed ? "black" : "gray",
+              pointerEvents: isVideoCallAllowed ? "auto" : "none",
+              cursor: isVideoCallAllowed ? "pointer" : "default",
+            }}
+          >
             <FaPhone />
             <b> Video Call</b>
           </p>
+          {!isVideoCallAllowed && <p>Video calls are only available between 6 PM and 12 AM.</p>}
         </>
       )}
     </div>
