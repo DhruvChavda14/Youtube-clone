@@ -9,7 +9,7 @@ export const useSocket = () => {
 };
 
 export const SocketProvider = (props) => {
-    const socket = useMemo(() => io("https://youtube-clone-1-jrfr.onrender.com"), []);
+    const socket = useMemo(() => io("https://youtube-clone-1-jrfr.onrender.com:8000"), []);
 
     return (
         <SocketContext.Provider value={socket}>
